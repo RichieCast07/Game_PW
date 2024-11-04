@@ -1,0 +1,55 @@
+<div class="game-board">
+    <h2>Yahtzee</h2>
+
+    <div class="dice-container">
+        <div *ngFor="let value of diceValues; let i = index" (click)="toggleLock(i)">
+            <app-die [value]="value"></app-die>
+            <p *ngIf="isLocked[i]" class="locked">Bloqueado</p>
+        </div>
+    </div>
+
+    <button (click)="rollAllDice()" [disabled]="rollCount >= 3">Tirar dados</button>
+    <button (click)="resetGame()">Reiniciar juego</button>
+
+    <div class="objectives">
+        <h3>Objetivos</h3>
+        <ul>
+            <li>Tres iguales: {{ objectives.threeOfAKind ? 'Ganado!' : 'No ganado!' }}</li>
+            <li>Cuatro iguales: {{ objectives.fourOfAKind ? 'Ganado!' : 'No ganado!' }}</li>
+            <li>Yahtzee: {{ objectives.yahtzee ? 'Ganado!' : 'No ganado!' }}</li>
+        </ul>
+    </div>
+
+
+    <div class="score-board">
+        <h3>Puntaje Acumulado</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Objetivo</th>
+                    <th>Puntos</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Tres iguales</td>
+                    <td>{{ score.threeOfAKind }}</td>
+                </tr>
+                <tr>
+                    <td>Cuatro iguales</td>
+                    <td>{{ score.fourOfAKind }}</td>
+                </tr>
+                <tr>
+                    <td>Yahtzee</td>
+                    <td>{{ score.yahtzee }}</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td><strong>Total</strong></td>
+                    <td><strong>{{ totalScore }}</strong></td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,65 @@
+.game-board {
+    text-align: center;
+}
+
+.dice-container {
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+}
+
+button {
+    padding: 8px 16px;
+    font-size: 16px;
+    margin: 5px;
+}
+
+.locked {
+    font-size: 12px;
+    color: red;
+}
+
+.objectives {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.score-board {
+    margin-top: 20px;
+    width: 100%;
+    text-align: center;
+}
+
+.score-board h3 {
+    margin-bottom: 10px;
+    color: #333;
+    text-align: left;
+    margin-left: 15vh;
+}
+
+
+table {
+    width: 50vh;
+    border-collapse: collapse;
+}
+
+table,
+th,
+td {
+    border: 1px solid #000000;
+}
+
+th,
+td {
+    padding: 8px;
+    text-align: center;
+}
+
+th {
+    background-color: #da4646;
+    color: white;
+}
+
+tfoot td {
+    font-weight: bold;
+}
